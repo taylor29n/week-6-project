@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/30543adfd6.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container header">
+        <form id="search-form">
+
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search another city" id="city-search">
+                <div class="input-group-append">
+                    <button class="btn btn-light" type="button" id="button-addon2">🔍</button>
+                </div>
+                <button class="btn btn-secondary" type="button" id="button-addon-current">Current Location</button>
+
+            </div>
+
+    </div>
+    </form>
+    </div>
+    <h1 id="city">Seattle, WA</h1>
+    <h2>Friday 1:00pm</h2>
+    <h3>Cloudy with a chance of afternoon showers.</h3>
+
+    <div class="container temperature" id="temperature">
+        <span class="temperature" id="temperature">50</span><span class="units">
+        </span>
+    </div>
+
+    <div class="container mainIcon">
+        <i class="fas fa-cloud-rain"></i>
+    </div>
+
+    <div class="container forecast">
+        <div class="row">
+            <div class="col-2">
+                <h5>Saturday</h5>
+                <p> ☁️</br> <span class="bold"> 13°</span> </p>
+            </div>
+            <div class="col-2">
+                <h5>Sunday</h5>
+                <p> 🌧</br> <span class="bold"> 15°</span> </p>
+            </div>
+            <div class="col-2">
+                <h5>Monday</h5>
+                <p> 🌧</br> <span class="bold"> 14°</span> </p>
+            </div>
+            <div class="col-2">
+                <h5>Tuesday</h5>
+                <p> 🌧</br> <span class="bold"> 12°</span> </p>
+            </div>
+            <div class="col-2">
+                <h5>Wednesday</h5>
+                <p> 🌧</br> <span class="bold"> 10°</span> </p>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-outline-light btn-lg btn-block">Hourly and extended forecast</button>
+
+    <footer>
+        Coded by Taylor Neumeister
+    </footer>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
