@@ -22,6 +22,7 @@ li {
   display: block;
   font-size: 15px;
   color: #3f4961;
+  text-transform: capitalize;
   font-weight: 100;
   margin: 0;
   padding: 0;

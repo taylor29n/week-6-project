@@ -34,26 +34,32 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-let currentDate = `${hour}:${minutes} ${day}, ${date} ${month}`;
-document.querySelector("h2").innerHTML = currentDate;
+let currentDate = `${day} ${month} ${date}</br><strong>${hour}:${minutes}</strong>`;
+document.querySelector("#date").innerHTML = currentDate;
 
 function displayTemp(response) {
-  console.log(response.data.name);
-  document.querySelector("city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = `${Math.round(
+  response.preventDefault();
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
-  )}°F`;
-  document.querySelector("h3").innerHTML = response.data.weather[0].main;
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#windspeed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
-function searchCity(city) {
-  let units = `imperial`;
-  let apiKey = `d84a8966c4d8473027b72c4eec67cecc1`;
+function searchCity() {
+  let units = "metric";
+  let apiKey = "d84a8966c4d8473027b72c4eec67cecc1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemp);
 }
 
 function submitCity(event) {
+  event.preventDefault();
   let city = document.querySelector("#city-search").value;
   searchCity(city);
 }
@@ -61,12 +67,10 @@ function submitCity(event) {
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", submitCity);
 
-//geolocation
-
 function locationFinder(position) {
   let lat = `${position.coords.latitude}`;
   let lon = `${position.coords.longitude}`;
-  let units = "imperial";
+  let units = "metric";
   let apiKey = "d84a8966c4d8473027b72c4eec67cecc";
   let apiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&unit=${units}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemp);
@@ -79,3 +83,10 @@ function findCurrentLocation(event) {
 
 let currentButton = document.querySelector("#button-addon-current");
 currentButton.addEventListener("click", findCurrentLocation);
+
+function extendedButton(event) {
+  preventDefault(event);
+  alert("Sorry, this function isn't available yet. Check Google!");
+}
+
+document.querySelector("#extended").addEventListener("click, extendedButton");
