@@ -13,52 +13,47 @@
 
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 </head>
 
 <body>
     <div class="container">
-        <div class="weather app">
+        <div class="app">
 
     <div class="container header">
         <form id="search-form">
-
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Search another city" id="city-search">
                 <div class="input-group-append">
                     <button class="btn btn-light" type="button" id="button-addon2">🔍</button>
                 </div>
                 <button class="btn btn-secondary" type="button" id="button-addon-current">Current Location</button>
-
             </div>
-
     </div>
     </form>
-    </div>
 
-    <h1 id="city"></h1>
+    <h1 id="city">Seattle</h1>
+
     <ul>
-        <li id="date">
+        <li id="date">Saturday 5:00
         </li>
-        <li id="description">
+        <li id="description">Rainy
         </li>
     </ul>
 <div class="row">
+    <div class="col-4">
+        <ul id="conditions" class="conditions">
+            <li id="humidity">humidity: 20%
+            </li>
+            <li id="windspeed">windspeed: 20kt
+            </li>
+        </ul>
+    </div>
     <div class="col-4" id="temperature">
-        <span class="temp" id="temp"></span><span class="units" id="units">
+        <span class="temp" id="temp"></span>50F<span class="units" id="units">
         </span>
      </div>
     <div class="col-4" id="icon">
         <i class="fas fa-cloud-rain"></i>
-        </div>
-        <div class="col-4" id="conditions">
-            <ul>
-                <li id="humidity">
-                </li>
-                <li id="windspeed">
-                </li>
-            </ul>
-        </i>
         </div>
     </div>
 
@@ -87,14 +82,15 @@
         </div>
     </div>
 
-    <button type="button" class="btn btn-outline-light btn-lg btn-block">Hourly and extended forecast</button>
+    <button type="button" class="btn btn-outline-light btn-lg btn-block" id="extended">Hourly and extended forecast</button>
 
-    <footer><small>
-        Open source code by <a href="https://github.com/taylor29n/week-6-project" target="_blank">Taylor Neumeister</a>. Hosted by <a href="https://www.netlify.com">Netlify</a>
-    </small></footer>
     <script src="src/index.js"></script>
     </div>
     </div>
+    <footer><small>
+            Open source code by <a href="https://github.com/taylor29n/week-6-project" target="_blank">Taylor Neumeister</a>.
+            Hosted by <a href="https://www.netlify.com">Netlify</a>
+        </small></footer>
 </body>
 
 </html>
