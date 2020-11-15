@@ -17,6 +17,9 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="weather app">
+
     <div class="container header">
         <form id="search-form">
 
@@ -32,17 +35,31 @@
     </div>
     </form>
     </div>
-    <h1 id="city">Seattle, WA</h1>
-    <h2>Friday 1:00pm</h2>
-    <h3>Cloudy with a chance of afternoon showers.</h3>
 
-    <div class="container temperature" id="temperature">
-        <span class="temperature" id="temperature">50</span><span class="units">
+    <h1 id="city"></h1>
+    <ul>
+        <li id="date">
+        </li>
+        <li id="description">
+        </li>
+    </ul>
+<div class="row">
+    <div class="col-4" id="temperature">
+        <span class="temp" id="temp"></span><span class="units" id="units">
         </span>
-    </div>
-
-    <div class="container mainIcon">
+     </div>
+    <div class="col-4" id="icon">
         <i class="fas fa-cloud-rain"></i>
+        </div>
+        <div class="col-4" id="conditions">
+            <ul>
+                <li id="humidity">
+                </li>
+                <li id="windspeed">
+                </li>
+            </ul>
+        </i>
+        </div>
     </div>
 
     <div class="container forecast">
@@ -72,10 +89,12 @@
 
     <button type="button" class="btn btn-outline-light btn-lg btn-block">Hourly and extended forecast</button>
 
-    <footer>
-        Coded by <a href="https://github.com/taylor29n/week-6-project">Taylor Neumeister</a>. Hosted by <a href="https://www.netlify.com">Netlify</a>
-    </footer>
+    <footer><small>
+        Open source code by <a href="https://github.com/taylor29n/week-6-project" target="_blank">Taylor Neumeister</a>. Hosted by <a href="https://www.netlify.com">Netlify</a>
+    </small></footer>
     <script src="src/index.js"></script>
+    </div>
+    </div>
 </body>
 
 </html>
