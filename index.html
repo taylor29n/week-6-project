@@ -40,50 +40,53 @@
         </li>
     </ul>
 <div class="row">
-    <div class="col-4">
+        <div class="col-6">
+            <div class="float-left" id="temperature">
+                <span class="temp" id="temp">50</span><span class="units" id="units"> <a href="">°C</a> |<a href="">°F</a>
+                </span>
+            </div>
+        <div class="float-left">
+            <div class="main-icon">
+            img
+            </div>
+        </div>
+    </div>
+        <div class="col-6">
         <ul id="conditions" class="conditions">
-            <li id="humidity">humidity: 20%
+            <li id="humidity">Humidity: 20%
             </li>
-            <li id="windspeed">windspeed: 20kt
+            <li id="windspeed">Windspeed: 20kt
             </li>
         </ul>
-    </div>
-    <div class="col-4" id="temperature">
-        <span class="temp" id="temp"></span>50F<span class="units" id="units">
-        </span>
-     </div>
-    <div class="col-4" id="icon">
-        <i class="fas fa-cloud-rain"></i>
-        </div>
+            </div>
     </div>
 
     <div class="container forecast">
         <div class="row">
             <div class="col-2">
                 <h5>Saturday</h5>
-                <p> ☁️</br> <span class="bold"> 13°</span> </p>
+                <p>☁️</br><span class="bold">13°</span></p>
             </div>
             <div class="col-2">
                 <h5>Sunday</h5>
-                <p> 🌧</br> <span class="bold"> 15°</span> </p>
+                <p>🌧</br><span class="bold">15°</span></p>
             </div>
             <div class="col-2">
                 <h5>Monday</h5>
-                <p> 🌧</br> <span class="bold"> 14°</span> </p>
+                <p>🌧</br><span class="bold">14°</span></p>
             </div>
             <div class="col-2">
                 <h5>Tuesday</h5>
-                <p> 🌧</br> <span class="bold"> 12°</span> </p>
+                <p>🌧</br><span class="bold">12°</span></p>
             </div>
             <div class="col-2">
                 <h5>Wednesday</h5>
-                <p> 🌧</br> <span class="bold"> 10°</span> </p>
+                <p>🌧</br><span class="bold">10°</span></p>
             </div>
         </div>
-    </div>
-
-    <button type="button" class="btn btn-outline-light btn-lg btn-block" id="extended">Hourly and extended forecast</button>
-
+        <div class="forecast-button">
+            <button type="button" class="btn btn-outline-light btn-lg btn-block" id="extended">Hourly and extended forecast</button>
+    </div></div>
     <script src="src/index.js"></script>
     </div>
     </div>
