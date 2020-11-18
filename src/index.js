@@ -1,3 +1,5 @@
+// Date & Time
+
 let now = new Date();
 let hour = now.getHours();
 if (hour < 10) {
@@ -37,18 +39,20 @@ let month = months[now.getMonth()];
 let currentDate = `${day} ${month} ${date}</br><strong>${hour}:${minutes}</strong>`;
 document.querySelector("#date").innerHTML = currentDate;
 
+// City Temperature
+
 function displayTemp(response) {
   response.preventDefault();
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector(
-    "#temp"
-  ).innerHTML = `Math.round${response.data.main.temp}`;
+  document.querySelector("#temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector(
-    "#windspeed"
-  ).innerHTML = `Math.round${response.data.wind.speed}`;
+  document.querySelector("#windspeed").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   document
     .querySelector("#weatherIcon")
     .setAttribute(
@@ -78,9 +82,11 @@ function submitCity(event) {
 let search = document.querySelector("#search-form");
 search.addEventListener("submit", submitCity);
 
+// Degrees Conversion
+
 function displayFarenheit(event) {
   event.preventDefault();
-  degreesF = `((${celciusVariable} * 9) / 5) + 32`;
+  degreesF = (celciusVariable * 9) / 5 + 32;
   let temperature = document.querySelector("#temp");
   temperature.innerHTML = Math.round(degreesF);
   clickCelcius.classList.remove("active");
@@ -103,6 +109,8 @@ clickCelcius.addEventListener("click", displayCelcius);
 
 let celciusVariable = null;
 
+// Current Location
+
 function locationFinder(position) {
   let lat = `${position.coords.latitude}`;
   let lon = `${position.coords.longitude}`;
@@ -119,9 +127,10 @@ function findCurrentLocation(event) {
 let currentButton = document.querySelector("#button-addon-current");
 currentButton.addEventListener("click", findCurrentLocation);
 
+// Extended Forecast
+
 function extendedButton(event) {
   event.preventDefault();
-  alert("Sorry, this function isn't available yet. Check Google!");
+  windowObjectReference = window.open("https://weather.com");
 }
-
 document.querySelector("#extended").addEventListener("click", extendedButton);
