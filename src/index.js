@@ -86,7 +86,7 @@ search.addEventListener("submit", submitCity);
 
 function displayFarenheit(event) {
   event.preventDefault();
-  degreesF = (celciusVariable * 9) / 5 + 32;
+  let degreesF = (celciusVariable * 9) / 5 + 32;
   let temperature = document.querySelector("#temp");
   temperature.innerHTML = Math.round(degreesF);
   clickCelcius.classList.remove("active");
