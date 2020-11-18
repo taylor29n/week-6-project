@@ -52,14 +52,25 @@ footer {
 
 .temp {
   padding-left: 30px;
-  font-size: 60px;
+  font-size: 40px;
   color: white;
   line-height: 1;
   font-weight: lighter;
 }
 
+.units .active {
+  color: #3f4961;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+
 .main-icon {
   position: relative;
+  top: -20px;
+  right: -30px;
 }
 
 .units {
@@ -67,6 +78,11 @@ footer {
   font-size: 16px;
   top: -20px;
   padding-right: 20px;
+}
+
+.conditions {
+  position: relative;
+  right: -60px;
 }
 
 .forecast {
