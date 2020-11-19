@@ -42,7 +42,6 @@ document.querySelector("#date").innerHTML = currentDate;
 // City Temperature
 
 function displayTemp(response) {
-  response.preventDefault();
   celciusVariable = response.data.main.temp;
 
   document.querySelector("#city").innerHTML = response.data.name;
@@ -67,15 +66,13 @@ function displayTemp(response) {
     );
 }
 
-function searchCity(city) {
-  city.preventDefault();
+function searchCity() {
   let apiKey = "d84a8966c4d8473027b72c4eec67cecc";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemp);
 }
 
 function submitCity(event) {
-  event.preventDefault();
   let city = document.querySelector("#city-search");
   searchCity(city.value);
 }
@@ -85,6 +82,14 @@ search.addEventListener("submit", submitCity);
 
 // Degrees Conversion
 
+function displayCelcius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temp");
+  temperature.innerHTML = Math.round(celciusVariable);
+  clickCelcius.classList.add("active");
+  clickFarenheit.classList.remove("active");
+}
+
 function displayFarenheit(event) {
   event.preventDefault();
   let degreesF = (celciusVariable * 9) / 5 + 32;
@@ -92,14 +97,6 @@ function displayFarenheit(event) {
   temperature.innerHTML = Math.round(degreesF);
   clickCelcius.classList.remove("active");
   clickFarenheit.classList.add("active");
-}
-
-function displayCelcius(event) {
-  event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = Math.round(celciusVariable);
-  clickCelcius.classList.add("active");
-  clickFarenheit.classList.remove("active");
 }
 
 let clickFarenheit = document.querySelector("#farenheit");

@@ -54,9 +54,9 @@ footer {
 
 .units {
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
   top: -20px;
-  padding-right: 20px;
+  padding-right: 30px;
 }
 
 .units .active {
